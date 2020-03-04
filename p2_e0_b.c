@@ -1,10 +1,12 @@
-#include "stack_fp.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include "stack_fp.h"
 #include "node.h"
 #include "types.h"
 
 int main(){
+    
     Stack *pNodes = NULL;
     Stack *pStrings = NULL;
     Node *pn = NULL;
@@ -64,7 +66,7 @@ int main(){
     }
 
     //imprimimos los strings que sacamos de la pila
-    printf("Poping node-names: ...\n");
+    printf("\nPoping node-names: ...\n");
     while (stack_isEmpty(pStrings) == FALSE){
         aux = stack_pop(pStrings);
         printf("%s ", aux);

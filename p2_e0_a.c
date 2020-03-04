@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #define MAX_ARRAY 3
 
-int p2_e0_a(){
+int mad43(){
     int i;
     Stack *ps = NULL;
     char array[MAX_ARRAY] = {'a','b', 'c'};
