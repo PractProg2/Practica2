@@ -1,0 +1,23 @@
+Status reverseWords(String salida, String entrada)
+    pila1 = stack_init()
+    st = OK 
+    t = 0
+    while i <= string_size(entrada) :
+        if entrada[i] == ' ' AND entrada[i] == '\0':
+            while j<i AND st == OK:
+                st = stack_push(pila1, entrada[j])
+                j = j+1
+
+        while stack_isEmpty(pila1) == FALSE AND st == OK:
+            salida[t] = stack_pop(pila1)
+            t = t+1
+
+        i = i+1 
+
+    stack_free(pila1)
+    
+    if st == OK:
+        return OK
+
+
+    return ERROR
