@@ -81,10 +81,15 @@ Label node_getLabel(const Node *n)
 
 Status node_setLabel(Node *n, Label l)
 {
-    if (!n || l == ERROR_NODE)
+    if (!n)
         return ERROR;
 
     n->label = l;
+
+    if(n->label != l){
+        return ERROR;
+    }
+
     return OK;
 }
 
@@ -103,6 +108,10 @@ Status node_setName(Node *n, const char *name)
         return ERROR;
 
     strcpy(n->name, name);
+
+    if(!n->name){
+        return ERROR;
+    }
     return OK;
 }
 

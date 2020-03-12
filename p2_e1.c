@@ -5,10 +5,10 @@
 
 Status reverseWords(char *strout, const char *strin){
     Stack *aux = NULL;
-    int i, j, t;
+    int i=0, j, t;
     Status st = OK;
     char c;
-    char *ty;
+    char *ty = NULL;
     int length=0;
 
     if (!strin || !strout) return ERROR;
@@ -20,28 +20,28 @@ Status reverseWords(char *strout, const char *strin){
     j = 0;
     length = strlen(strin);
 
-    for (i=0; i <length+1; i++){
-        if (strin[i] == ' ' || strin[i] =='\0'){
-            c = ' ';
-            st = stack_push(aux, &c);
-            while (j<i && st == OK){
-                if (strin[j]!= ' '){
-                    st = stack_push(aux, &strin[j]);
-                    j++;
-                }else{
-                    j++;
-                }
-            }
-            
-        }
-        
-        while (stack_isEmpty(aux) == FALSE && st==OK){
-            ty =  (char *)stack_pop(aux);
-            strout[t] = *ty;
-            t++;
-            free(ty);
-        }
+    while(i<=length){
+    if(strin[i] == '\0'){
+        strout[t] = '\0';
+        i++;
     }
+    if(strin[i] == ' '){
+        strout[t] = ' ';
+        t++;
+        i++;
+    }
+    while(i<length && strin[i]!=' ' && strin[i] !='\0'){
+        printf("_%c_\n", strin[i]);
+        st = stack_push(aux, &strin[i]);
+        i++;
+    }
+    while(stack_isEmpty(aux) == FALSE){
+        ty= (char *)stack_pop(aux);
+        strout[t] = *ty;
+        t++;
+        free(ty);
+    }    
+}
 
     stack_free(aux);
 
@@ -60,9 +60,8 @@ int main(int argc, char *argv[]){
     }
 
     entrada = (char *) argv[1];
-    salida = (char *)malloc (200* sizeof(char));
+    salida = (char *)calloc (200, sizeof(char));
     if (!salida) return -1;
-
 
     printf("Input : %s\n", entrada);
 

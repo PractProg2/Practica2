@@ -21,3 +21,37 @@ Status reverseWords(String salida, String entrada)
 
 
     return ERROR
+
+i=t=0;
+while(i<strlen(entrada)+1){
+    if(entrada[i] == ' '){
+        c = ' ';
+        stack_push(aux, &c);
+        i++;
+    }
+    while(entrada[i]!=' ' || entrada[i] !='\0'){
+        st = stack_push(aux, &entrada[i]);
+        i++;
+    }
+    while(stack_isEmpty(aux) == FALSE && st==OK){
+        ty= (char *)stack_pop(aux);
+        salida[t] = *ty;
+        t++;
+        free(ty);
+    }
+    
+}
+
+        if (strin[i] == ' ' || strin[i] =='\0'){
+            c = ' ';
+            st = stack_push(aux, &c);
+            while (j<i && st == OK){
+                if (strin[j]!= ' '){
+                    st = stack_push(aux, &strin[j]);
+                    j++;
+                }else{
+                    j++;
+                }
+            }
+            
+        }
