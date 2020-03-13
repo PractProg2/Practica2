@@ -1,19 +1,25 @@
-#include "stack_fp.h"
+#include "stack.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
+
 Status reverseWords(char *strout, const char *strin){
     Stack *aux = NULL;
-    int i=0, t;
+    Element *ele = NULL;
+    int i=0, t, length=0;
     Status st = OK;
     char *ty = NULL;
-    int length=0;
+
 
     if (!strin || !strout) return ERROR;
-
-    aux = stack_init(char_free, char_copy, char_print);
-    if (!aux) return ERROR;
+    ele = element_init();
+    if(!ele) return ERROR;
+    aux = stack_init();
+    if (!aux){
+        element_free(ele);
+        return ERROR;
+    }
 
     t = 0;
     length = strlen(strin);
@@ -29,17 +35,19 @@ Status reverseWords(char *strout, const char *strin){
         i++;
     }
     while(i<length && strin[i]!=' ' && strin[i] !='\0'){
-        st = stack_push(aux, &strin[i]);
+        element_setInfo(ele,(char *) &strin[i]);
+        st = stack_push(aux, ele);
         i++;
     }
     while(stack_isEmpty(aux) == FALSE){
-        ty= (char *)stack_pop(aux);
+        element_free(ele);
+        ele = stack_pop(aux);
+        ty = (char *)element_getInfo(ele);
         strout[t] = *ty;
         t++;
-        free(ty);
     }    
 }
-
+    element_free(ele);
     stack_free(aux);
 
     if (st == OK) return OK;

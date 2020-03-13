@@ -64,13 +64,13 @@ int main(){
     }
 
     //imprimimos los strings que sacamos de la pila
-    printf("Poping node-names: ...\n");
+    printf("\nPoping node-names: ...\n");
     while (stack_isEmpty(pStrings) == FALSE){
         aux = stack_pop(pStrings);
         printf("%s ", aux);
         free(aux);
     }
-
+    printf("\n");
     node_free(pn);
     stack_free(pNodes);
     stack_free(pStrings);
