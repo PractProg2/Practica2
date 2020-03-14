@@ -1,4 +1,6 @@
-/** File:   stack.h* Author: Profesores de PROG2*/
+/** File:   stack.h
+* Author: Profesores de PROG2*/
+
 #ifndef STACK_H
 #define STACK_H
 #include "element.h"
