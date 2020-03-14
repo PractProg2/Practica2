@@ -1,3 +1,14 @@
+/**
+* @file p2_e3_b.c
+* @author Gonzalo Arcas & Ciro Alonso
+* @date 10 March 2020
+* @brief sexto ejercicio practica 2
+*
+* @details Programa principal para comprobar la funcionalidad de el ejercicio 0b usando el nuevo TAD Stack creado
+*
+* @see
+*/
+
 #include "stack.h"
 #include <stdio.h>
 #include <stdlib.h>
