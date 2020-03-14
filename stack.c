@@ -1,3 +1,15 @@
+/**
+* @file stack.c
+* @author Gonzalo Arcas & Ciro Alonso
+* @date 14 March 2020
+* @brief ADT Stack
+*
+* @details definicion de las funciones stack.h
+*
+* @see
+*/
+
+
 #include "stack.h"
 #include <errno.h>
 
