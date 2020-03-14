@@ -1,3 +1,14 @@
+/**
+* @file p2_e0_a.c
+* @author Gonzalo Arcas & Ciro Alonso
+* @date 7 March 2020
+* @brief primer ejercicio practica 2
+*
+* @details Comprobacion de las funciones de la libreria de Stack
+*
+* @see
+*/
+
 #include "stack_fp.h"
 #include <stdio.h>
 #include <stdlib.h>
