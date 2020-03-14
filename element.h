@@ -1,4 +1,6 @@
-/** File:   element.h* Author: Profesores de PROG2*/
+/** File:   element.h 
+*Author: Profesores de PROG2*/
+
 #ifndef ELEMENT_H
 #define ELEMENT_H
 #include "types.h"
