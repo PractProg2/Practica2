@@ -1,3 +1,15 @@
+/**
+* @file element.c
+* @author Gonzalo Arcas & Ciro Alonso
+* @date 14 March 2020
+* @brief ADT Element
+*
+* @details definicion de las funciones element.h
+*
+* @see
+*/
+
+
 #include "element.h"
 #include <errno.h>
 
