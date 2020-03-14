@@ -1,0 +1,92 @@
+Gonzalo Arcas y Ciro Alonso Grupo 2111 Pareja 7
+
+Cuestiones Práctica 2 Prog 2: 
+
+
+1. Algoritmia
+
+Status infix2postfix (String suf, String in) :
+ret = TRUE
+s = stack_ini ()
+while in[i] <> EoS :
+
+// if the symbol being read is an operator
+	if isOperator (in[i]) == TRUE :
+	while stack_isEmpty (s) == FALSE AND prec (stack_top (s)) >= prec (in[i]) :
+		ele = stack_pop (s)
+		suf [j] = ele
+		j = j + 1
+	stack_push (stack, in[i])
+
+// else if the symbol being read is a left parenthesis
+	else if in[i] == '('
+		stack_push (stack, in[i])
+
+// else if the symbol being read is a right parenthesis
+	else if in[i] == ')' :
+		while stack_isEmpty (s) == FALSE AND stack_top (stack) <> '(' :
+			ele = stack_pop (stack)
+			suf [j] = ele
+			j = j + 1
+
+// pop the open paranthesis
+stack_pop (stack)
+
+// else if the symbol being read is an operand, put it in suffix expression
+       else :
+	suf[j] = in[i]
+	j = j + 1
+	i = i + 1
+       while stack_isEmpty (s) == FALSE :
+	ele = stack_pop (stack)
+	suf [j] = ele
+	j = j + 1
+stack_free (s)
+return TRUE
+
+
+
+2. Tipos Ocultos
+
+
+Primitiva stack_size: Para esta función usamos un elemento y una pila auxiliar para extraer e introducir elementos en la pila y usamos un variable entera (cont) para comprobar el tamaño de la pila.
+
+int stack_size(Stack *s){
+	
+  int cont = 0;
+  Stack *aux = NULL;
+  Element *ele = NULL;
+
+  if (!s) return -1;
+  
+  aux = stack_init();
+  if (!aux) return -1;
+
+  while (stack_isEmpty(s) == FALSE){
+	ele = stack_pop(s);
+	stack_push(aux, ele);
+	cont ++;
+	element_free(ele);
+  }
+
+  while (stack_isEmpty(aux) == FALSE){
+	ele = stack_pop(aux);
+	stack_push(s, ele);
+	element_free(ele);
+  }
+
+  return cont;
+}
+
+
+
+
+3. Diseño
+
+
+No se podría realizar y para poder hacerlo deberíamos hacer la pila abstracta para que pueda recibir diferentes tipos de variables o TAD's.
+
+
+
+
+
