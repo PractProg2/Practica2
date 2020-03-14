@@ -2,7 +2,7 @@
 * @file p2_e2.c
 * @author Gonzalo Arcas & Ciro Alonso
 * @date 10 March 2020
-* @brief cuarto ejercicio practica 2
+* @brief cuarto  ejercicio practica 2
 *
 * @details Programa principal para comprobar la funcionalidad de la funcion infix2postfix
 *
