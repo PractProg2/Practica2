@@ -1,3 +1,14 @@
+/**
+* @file p2_e1.c
+* @author Gonzalo Arcas & Ciro Alonso
+* @date 7 March 2020
+* @brief tercer ejercicio practica 2
+*
+* @details Programa principal para comprobar la funcionalidad de la funcion reverseWords
+*
+* @see
+*/
+
 #include "stack_fp.h"
 #include <stdio.h>
 #include <stdlib.h>
