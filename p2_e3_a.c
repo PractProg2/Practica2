@@ -1,3 +1,14 @@
+/**
+* @file p2_e3_a.c
+* @author Gonzalo Arcas & Ciro Alonso
+* @date 10 March 2020
+* @brief quinto ejercicio practica 2
+*
+* @details Programa principal para comprobar la funcionalidad de la funcion reversoWords usando el nuevo TAD Stack creado
+*
+* @see
+*/
+
 #include "stack.h"
 #include <stdio.h>
 #include <stdlib.h>
